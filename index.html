@@ -65,11 +65,7 @@
       background-image: radial-gradient(circle, rgba(15,28,63,0.05) 1px, transparent 1px);
       background-size: 32px 32px; pointer-events: none;
     }
-
-    .logo-wrap { position: relative; z-index: 2; margin-bottom: 32px; animation: fadeDown 0.6s ease forwards; }
-    .logo-wrap img { width: 120px; height: 120px; object-fit: contain; filter: drop-shadow(0 6px 20px rgba(15,28,63,0.15)); }
-
-    .pre-headline {
+.pre-headline {
       position: relative; z-index: 2;
       display: inline-flex; align-items: center; gap: 8px;
       background: rgba(22,163,74,0.08); border: 1px solid rgba(22,163,74,0.3);
@@ -345,10 +341,7 @@
 <!-- HERO -->
 <section class="hero">
   <div class="dots-bg"></div>
-  <div class="logo-wrap">
-    <img src="q.jpg" alt="QES Logo" onerror="this.style.display='none';this.parentElement.style.marginBottom='0';this.parentElement.style.minHeight='0'" />
-  </div>
-  <div class="pre-headline">
+<div class="pre-headline">
     Samarqandlik Germaniyaga ishga ketmoqchi bo'lganlar diqqatiga!
   </div>
   <h1 class="headline">
@@ -607,31 +600,38 @@
     goStep(s+1);
   }
 
-  function submitLead() {
-    const d = {
-      name:   document.getElementById('inp-name').value.trim(),
-      phone:  document.getElementById('inp-phone').value.trim(),
-      time:   document.getElementById('inp-time').value,
-      phone2: document.getElementById('inp-phone2').value.trim()
-    };
+  async function submitLead() {
+    const name   = document.getElementById('inp-name').value.trim();
+    const phone  = document.getElementById('inp-phone').value.trim();
+    const time   = document.getElementById('inp-time').value;
+    const phone2 = document.getElementById('inp-phone2').value.trim();
 
+    // Ekranni ko'rsat
     showStep('stepSuccess');
     updateDots('done');
-    console.log('Lead:', d);
 
-    // ✅ Meta Pixel — Lead event
-    // Faqat Ha qulay → barcha savollar to'ldirilganda Lead hisoblanadi
+    // 1. Meta Pixel — brauzerdan
+    const eventId = 'lead_' + Date.now() + '_' + Math.random().toString(36).slice(2);
     if (typeof fbq !== 'undefined') {
       fbq('track', 'Lead', {
-        content_name: 'QES Ro\'yhatdan o\'tish',
+        content_name: "QES Ro'yhatdan o'tish",
         content_category: 'Education — Nemis tili',
         value: 0,
         currency: 'UZS'
-      });
+      }, { eventID: eventId });
     }
 
-    // Webhook (tayyor bo'lgach qo'shing):
-    // fetch('YOUR_WEBHOOK_URL', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(d)});
+    // 2. Meta CAPI — serverdan (iOS va AdBlocker uchun)
+    try {
+      await fetch('/api/lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, phone, time, phone2, eventId, userAgent: navigator.userAgent, sourceUrl: window.location.href })
+      });
+      console.log('CAPI yuborildi');
+    } catch(e) {
+      console.warn('CAPI xato:', e);
+    }
   }
 
   // Scroll reveal
