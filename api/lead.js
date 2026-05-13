@@ -73,13 +73,7 @@ module.exports = async (req, res) => {
           ]
         }]
       },
-      custom_fields_values: [
-        {
-          field_id: null,
-          field_name: 'Qo\'ng\'iroq vaqti',
-          values: [{ value: time || '' }]
-        }
-      ]
+
     }];
 
     const amoRes = await fetch(
