@@ -1,7 +1,6 @@
 const PIXEL_ID     = '1509793157199236';
 const ACCESS_TOKEN = 'EAAboLfWoKjwBRWMPfZAZB6EeIDqu40mvegDz72o42ToqjUGx1uFVUOwHdiZBfw6mmWdbgRuhU8KnEFOLSDXWwxGdKKAD3oK0eNCQBcZAfMSG1SqywEWElUhhuC4fgBakgdXmwYB8ndWjF7oOYgJ045eLQqnDyoVGjvOSx1iVEsM4ypkckFev7zIhoPTDUZAu5tAZDZD';
 
-// Sotildi etap ID si
 const SOLD_STATUS_ID = 85616662;
 
 module.exports = async (req, res) => {
@@ -12,14 +11,16 @@ module.exports = async (req, res) => {
     const body = req.body;
     console.log('Webhook keldi:', JSON.stringify(body));
 
-    // amoCRM webhook strukturasi
-    const leads = body?.leads?.status || [];
+    // amoCRM form-encoded formatdan leadlarni olish
+    let i = 0;
+    while (body[`leads[status][${i}][id]`] !== undefined) {
+      const leadId   = body[`leads[status][${i}][id]`];
+      const statusId = parseInt(body[`leads[status][${i}][status_id]`]);
+      const leadName = body[`leads[status][${i}][name]`] || '';
+      const price    = body[`leads[status][${i}][price]`] || 0;
 
-    for (const lead of leads) {
-      const statusId = parseInt(lead.status_id);
-      console.log(`Lead ${lead.id} → etap ${statusId}`);
+      console.log(`Lead ${leadId} → etap ${statusId}`);
 
-      // Faqat sotildi etapiga o'tganda
       if (statusId === SOLD_STATUS_ID) {
         const eventPayload = {
           data: [{
@@ -27,15 +28,15 @@ module.exports = async (req, res) => {
             event_time:       Math.floor(Date.now() / 1000),
             action_source:    'crm',
             event_source_url: 'https://qadriyat-capi.vercel.app',
-            event_id:         `sold_${lead.id}_${Date.now()}`,
+            event_id:         `sold_${leadId}_${Date.now()}`,
             user_data: {
               client_user_agent: 'amoCRM'
             },
             custom_data: {
-              lead_id:   lead.id,
-              lead_name: lead.name || '',
-              value:     lead.price || 0,
-              currency:  'UZS'
+              lead_id:  leadId,
+              lead_name: leadName,
+              value:    price,
+              currency: 'UZS'
             }
           }]
         };
@@ -49,8 +50,10 @@ module.exports = async (req, res) => {
           }
         );
         const capiData = await capiRes.json();
-        console.log(`Lead ${lead.id} — Purchase yuborildi:`, JSON.stringify(capiData));
+        console.log(`Lead ${leadId} — Purchase yuborildi:`, JSON.stringify(capiData));
       }
+
+      i++;
     }
 
     return res.status(200).json({ ok: true });
