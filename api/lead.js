@@ -62,7 +62,7 @@ module.exports = async (req, res) => {
       name:        leadName,
       pipeline_id: AMO_PIPELINE,
       status_id:   AMO_STAGE,
-      tags: [{ name: 'Nemis tili by FR' }],
+      tags: [{ name: 'CAPI' }],
       _embedded: {
         contacts: [{
           name: name,
@@ -109,7 +109,7 @@ module.exports = async (req, res) => {
           body: JSON.stringify([{
             id: leadId,
             _embedded: {
-              tags: [{ name: 'Nemis tili by FR' }]
+              tags: [{ name: 'CAPI' }]
             }
           }])
         }
