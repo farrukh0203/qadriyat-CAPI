@@ -63,12 +63,6 @@ module.exports = async (req, res) => {
       pipeline_id: AMO_PIPELINE,
       status_id:   AMO_STAGE,
       tags: [{ name: 'Nemis tili by FR' }],
-      custom_fields_values: [
-        {
-          field_id: 804445,
-          values: [{ value: time || '' }]
-        }
-      ],
       _embedded: {
         contacts: [{
           name: name,
@@ -76,6 +70,10 @@ module.exports = async (req, res) => {
             {
               field_code: 'PHONE',
               values: [{ value: cleanedPhone, enum_code: 'WORK' }]
+            },
+            {
+              field_id: 804445,
+              values: [{ value: time || '' }]
             }
           ]
         }]
