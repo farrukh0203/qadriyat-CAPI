@@ -95,6 +95,29 @@ module.exports = async (req, res) => {
     const amoData = await amoRes.json();
     console.log('amoCRM lead:', JSON.stringify(amoData));
 
+    // 3. Tag qo'shish — alohida so'rov
+    if (amoData && amoData[0] && amoData[0].id) {
+      const leadId = amoData[0].id;
+      const tagRes = await fetch(
+        `https://${AMO_SUBDOMAIN}.amocrm.ru/api/v4/leads`,
+        {
+          method: 'PATCH',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${AMO_TOKEN}`
+          },
+          body: JSON.stringify([{
+            id: leadId,
+            _embedded: {
+              tags: [{ name: 'Nemis tili by FR' }]
+            }
+          }])
+        }
+      );
+      const tagData = await tagRes.json();
+      console.log('Tag qo\'shildi:', JSON.stringify(tagData));
+    }
+
     return res.status(200).json({ success: true, capi: capiData, amo: amoData });
 
   } catch (err) {
