@@ -41,6 +41,7 @@ module.exports = async (req, res) => {
         action_source:    'website',
         event_source_url: sourceUrl || 'https://qadriyat-capi.vercel.app',
         event_id:         eventId || `lead_${Date.now()}`,
+        test_event_code: 'TEST7400',
         user_data: {
           ph: sha256(cleanedPhone),
           fn: sha256(firstName),
@@ -62,7 +63,7 @@ module.exports = async (req, res) => {
       name:        leadName,
       pipeline_id: AMO_PIPELINE,
       status_id:   AMO_STAGE,
-      tags: [{ name: 'CAPI' }],
+      tags: [{ name: 'Nemis tili by FR' }],
       _embedded: {
         contacts: [{
           name: name,
@@ -109,7 +110,7 @@ module.exports = async (req, res) => {
           body: JSON.stringify([{
             id: leadId,
             _embedded: {
-              tags: [{ name: 'CAPI' }]
+              tags: [{ name: 'Nemis tili by FR' }]
             }
           }])
         }
