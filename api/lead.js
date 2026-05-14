@@ -35,13 +35,13 @@ module.exports = async (req, res) => {
 
     // 1. Meta CAPI
     const capiPayload = {
+      test_event_code: 'TEST7400',
       data: [{
         event_name:       'Lead',
         event_time:       Math.floor(Date.now() / 1000),
         action_source:    'website',
         event_source_url: sourceUrl || 'https://qadriyat-capi.vercel.app',
         event_id:         eventId || `lead_${Date.now()}`,
-        test_event_code: 'TEST7400',
         user_data: {
           ph: sha256(cleanedPhone),
           fn: sha256(firstName),
