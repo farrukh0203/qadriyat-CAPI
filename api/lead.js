@@ -35,7 +35,6 @@ module.exports = async (req, res) => {
 
     // 1. Meta CAPI
     const capiPayload = {
-      test_event_code: 'TEST7400',
       data: [{
         event_name:       'Lead',
         event_time:       Math.floor(Date.now() / 1000),
