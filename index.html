@@ -1,336 +1,267 @@
 <!DOCTYPE html>
 <html lang="uz">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>QES — Qadriyat Education School</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8"/>
+  <meta name="facebook-domain-verification" content="635zx1piacmh4kwt4re1hkazzzo832" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PayFly — Misr va Turkiya turlari</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 
-  <!-- ✅ Meta Pixel -->
+  <!-- Meta Pixel — YOUR_PIXEL_ID NI ALMASHTIRING -->
   <script>
     !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
     n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
     n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
     t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
     document,'script','https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1509793157199236');
+    fbq('init', '2013283585928690');
     fbq('track', 'PageView');
-    fbq('track', 'ViewContent', { content_name: 'QES Landing Page', content_category: 'Education' });
+    fbq('track', 'ViewContent', { content_name: 'PayFly Landing', content_category: 'Travel' });
   </script>
   <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1509793157199236&ev=PageView&noscript=1"/></noscript>
-  <!-- End Meta Pixel -->
+    src="https://www.facebook.com/tr?id=2013283585928690&ev=PageView&noscript=1"/></noscript>
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --navy:        #0f1c3f;
-      --navy-dark:   #090e20;
-      --green:       #16a34a;
-      --green-light: #22c55e;
-      --green-glow:  rgba(22,163,74,0.45);
-      --bg:          #ffffff;
-      --text:        #0f1c3f;
-      --muted:       #5a6f9a;
-      --card-bg:     #f4f7ff;
-      --border:      #dde3f0;
-      --font-h: 'Montserrat', sans-serif;
-      --font-b: 'Inter', sans-serif;
+      --navy:   #0a2a6e;
+      --ocean:  #0e5398;
+      --sky:    #1a7fc4;
+      --gold:   #f5a623;
+      --goldl:  #fbbf5a;
+      --white:  #ffffff;
+      --off:    #f0f7ff;
+      --muted:  #6b8fa8;
+      --text:   #0a2540;
+      --border: #d0e4f5;
+      --fh: 'Playfair Display', serif;
+      --fb: 'DM Sans', sans-serif;
     }
-
     html { scroll-behavior: smooth; }
-    body { background: var(--bg); color: var(--text); font-family: var(--font-b); font-size: 16px; line-height: 1.6; overflow-x: hidden; }
+    body { background: var(--white); color: var(--text); font-family: var(--fb); overflow-x: hidden; line-height: 1.6; font-size: 18px; }
     ::-webkit-scrollbar { width: 4px; }
-    ::-webkit-scrollbar-track { background: #f0f4ff; }
-    ::-webkit-scrollbar-thumb { background: var(--green); border-radius: 2px; }
+    ::-webkit-scrollbar-thumb { background: var(--sky); border-radius: 2px; }
 
-    /* HERO */
+    /* ── HERO ── */
     .hero {
-      display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
+      min-height: auto;
+      background:
+        linear-gradient(180deg, rgba(10,42,110,0.78) 0%, rgba(10,42,110,0.45) 55%, rgba(10,42,110,0.7) 100%),
+        url('1.jpg') center/cover no-repeat;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
       text-align: center; padding: 60px 24px 80px;
-      position: relative; overflow: hidden; background: #fff;
     }
-    .hero::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(22,163,74,0.07) 0%, transparent 60%);
-      pointer-events: none;
-    }
-    .dots-bg {
-      position: absolute; inset: 0;
-      background-image: radial-gradient(circle, rgba(15,28,63,0.05) 1px, transparent 1px);
-      background-size: 32px 32px; pointer-events: none;
-    }
-.pre-headline {
-      position: relative; z-index: 2;
+
+    .hero-badge {
       display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(22,163,74,0.08); border: 1px solid rgba(22,163,74,0.3);
-      border-radius: 100px; padding: 8px 20px;
-      font-family: var(--font-h); font-size: 0.82rem; font-weight: 600;
-      color: var(--green); letter-spacing: 0.5px; margin-bottom: 24px;
-      animation: fadeDown 0.6s 0.1s ease both;
+      background: rgba(245,166,35,0.18); border: 1px solid rgba(245,166,35,0.5);
+      border-radius: 100px; padding: 6px 18px;
+      font-size: 0.78rem; font-weight: 600; color: var(--goldl);
+      letter-spacing: 1px; text-transform: uppercase; margin-bottom: 20px;
+      animation: fu 0.6s ease both;
     }
-
-    .headline {
-      position: relative; z-index: 2;
-      font-family: var(--font-h); font-size: clamp(1.8rem, 5vw, 3.4rem);
-      font-weight: 900; line-height: 1.15; letter-spacing: -1px;
-      max-width: 780px; margin-bottom: 20px; color: var(--navy);
-      animation: fadeDown 0.6s 0.15s ease both;
+    .hero h1 {
+      font-family: var(--fh);
+      font-size: clamp(2.2rem, 6.5vw, 4.8rem);
+      font-weight: 900; color: var(--white);
+      line-height: 1.1; letter-spacing: -1px;
+      max-width: 820px; margin-bottom: 18px;
+      animation: fu 0.6s 0.1s ease both;
     }
-    .headline .hl {
-      color: var(--green); position: relative; display: inline-block;
+    .hero h1 em { color: var(--gold); font-style: normal; }
+    .hero-sub {
+      color: rgba(255,255,255,0.82); font-size: 1rem;
+      max-width: 540px; margin-bottom: 14px;
+      font-weight: 300; line-height: 1.7;
+      animation: fu 0.6s 0.15s ease both;
     }
-    .headline .hl::after {
-      content: ''; position: absolute; bottom: -4px; left: 0; right: 0;
-      height: 3px; background: linear-gradient(90deg, var(--green), var(--green-light));
-      border-radius: 2px;
+    .hero-tags {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 8px;
+      margin-bottom: 36px;
+      animation: fu 0.6s 0.2s ease both;
     }
-
-    .guarantee {
-      position: relative; z-index: 2;
-      background: linear-gradient(135deg, rgba(22,163,74,0.08), rgba(22,163,74,0.03));
-      border: 1px solid rgba(22,163,74,0.3); border-radius: 14px;
-      padding: 16px 28px; max-width: 600px; font-size: 0.95rem;
-      color: var(--text); margin-bottom: 36px;
-      animation: fadeDown 0.6s 0.2s ease both; line-height: 1.5;
+    .hero-tag {
+      background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25);
+      color: rgba(255,255,255,0.9); font-size: 0.78rem; font-weight: 500;
+      padding: 5px 14px; border-radius: 100px;
     }
-    .guarantee strong { color: var(--green); font-family: var(--font-h); }
-
-    .cta-btn {
-      position: relative; z-index: 2;
+    .hero-btn {
       display: inline-block;
-      background: linear-gradient(135deg, #16a34a, #15803d);
-      color: #fff; font-family: var(--font-h); font-size: 1.05rem; font-weight: 800;
-      padding: 16px 40px; border-radius: 10px; border: none; width: 100%; max-width: 480px; font-size: 1rem;
-      cursor: pointer; text-decoration: none; transition: all 0.25s;
-      box-shadow: 0 8px 32px var(--green-glow), 0 0 0 0 rgba(22,163,74,0.3);
-      animation: fadeDown 0.6s 0.25s ease both, pulse-btn 2.5s 1.5s ease-in-out infinite;
-      letter-spacing: 0.3px;
+      background: linear-gradient(135deg, var(--gold), #e8941a);
+      color: var(--navy); font-family: var(--fb); font-size: 1.05rem; font-weight: 700;
+      padding: 18px 0; border-radius: 12px; border: none; cursor: pointer;
+      width: 100%; max-width: 420px;
+      box-shadow: 0 8px 32px rgba(245,166,35,0.45);
+      animation: fu 0.6s 0.25s ease both, glow 2.5s 1.5s ease-in-out infinite;
+      transition: transform 0.2s;
     }
-    .cta-btn:hover { transform: translateY(-3px); box-shadow: 0 16px 48px rgba(22,163,74,0.55), 0 0 40px rgba(22,163,74,0.2); }
+    .hero-btn:hover { transform: translateY(-3px); }
 
-    @keyframes pulse-btn {
-      0%,100% { box-shadow: 0 8px 32px var(--green-glow), 0 0 0 0 rgba(22,163,74,0.3); }
-      50%      { box-shadow: 0 8px 32px var(--green-glow), 0 0 0 14px rgba(22,163,74,0); }
+    @keyframes glow {
+      0%,100% { box-shadow: 0 8px 32px rgba(245,166,35,0.45), 0 0 0 0 rgba(245,166,35,0.3); }
+      50%      { box-shadow: 0 8px 32px rgba(245,166,35,0.45), 0 0 0 14px rgba(245,166,35,0); }
     }
+    @keyframes fu { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } }
 
-    /* ✅ "Birinchi BEPUL sinov darsi" — "Majburiyatsiz" olib tashlandi */
-    .cta-sub-wrap {
-      position: relative; z-index: 2; margin-top: 14px;
-      display: flex; flex-direction: column; align-items: center; gap: 6px;
-      animation: fadeDown 0.6s 0.3s ease both;
+    /* ── STATS ── */
+    .stats { background: var(--navy); padding: 40px 24px; }
+    .stats-inner { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; text-align: center; }
+    .stat-num { font-family: var(--fh); font-size: 2rem; font-weight: 900; color: var(--gold); line-height: 1; margin-bottom: 4px; }
+    .stat-lbl { font-size: 0.78rem; color: rgba(255,255,255,0.55); line-height: 1.4; }
+
+    /* ── SECTIONS ── */
+    .sec-label { text-align:center; font-size:0.72rem; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--sky); margin-bottom:10px; }
+    .sec-title { text-align:center; font-family:var(--fh); font-size:clamp(1.6rem,3vw,2.4rem); font-weight:700; color:var(--navy); margin-bottom:48px; letter-spacing:-0.5px; }
+    .sec-title span { color: var(--gold); }
+
+    /* ── DESTINATIONS ── */
+    .destinations { background: var(--off); padding: 80px 24px; }
+    .dest-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(300px,1fr)); gap: 20px; max-width: 1000px; margin: 0 auto; }
+
+    .dest-card {
+      border-radius: 20px; overflow: hidden; position: relative;
+      cursor: pointer; transition: transform 0.3s;
+      aspect-ratio: 3/4;
     }
-    .cta-free {
-      display: inline-flex; align-items: center; gap: 6px;
-      background: rgba(22,163,74,0.1); border: 1px solid rgba(22,163,74,0.25);
-      border-radius: 100px; padding: 5px 16px;
-      font-family: var(--font-h); font-size: 0.8rem; font-weight: 700; color: var(--green);
+    .dest-card:hover { transform: translateY(-6px); }
+    .dest-card img { width:100%; height:100%; object-fit:cover; transition: transform 0.5s; }
+    .dest-card:hover img { transform: scale(1.05); }
+    .dest-overlay {
+      position:absolute; inset:0;
+      background: linear-gradient(0deg, rgba(5,15,40,0.97) 0%, rgba(5,15,40,0.75) 45%, rgba(5,15,40,0.35) 75%, rgba(5,15,40,0.1) 100%);
+      display:flex; flex-direction:column; justify-content:flex-end; padding:28px;
     }
-
-    @keyframes fadeDown {
-      from { opacity: 0; transform: translateY(-20px); }
-      to   { opacity: 1; transform: translateY(0); }
+    .dest-flag { font-size:1.8rem; margin-bottom:8px; }
+    .dest-name { font-family:var(--fh); font-size:1.7rem; font-weight:700; color:var(--white); margin-bottom:10px; }
+    .dest-list { list-style:none; margin-bottom:12px; }
+    .dest-list li { font-size:0.9rem; color:rgba(255,255,255,0.8); padding:2px 0; display:flex; align-items:center; gap:6px; }
+    .dest-list li::before { content:'✓'; color:var(--gold); font-weight:700; font-size:0.75rem; }
+    .dest-tags { display:flex; gap:6px; flex-wrap:wrap; }
+    .dest-tag {
+      background:rgba(245,166,35,0.25); border:1px solid rgba(245,166,35,0.5);
+      color:var(--goldl); font-size:0.78rem; font-weight:600;
+      padding:3px 10px; border-radius:100px;
     }
-
-    /* STATS */
-    .stats { background: var(--navy); padding: 56px 24px; }
-    .stats-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; max-width: 700px; margin: 0 auto; text-align: center; }
-    .stat-num { font-family: var(--font-h); font-size: 2.4rem; font-weight: 900; color: var(--green-light); line-height: 1; margin-bottom: 6px; }
-    .stat-label { font-size: 0.82rem; color: rgba(255,255,255,0.6); line-height: 1.4; }
-
-    /* KURS HAQIDA */
-    .usps { background: #f8faff; padding: 80px 24px; position: relative; }
-    .usps::before { content:''; position:absolute; top:0;left:0;right:0; height:3px; background:linear-gradient(90deg,transparent,var(--green),transparent); }
-    .section-label { text-align:center; font-family:var(--font-h); font-size:0.75rem; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--green); margin-bottom:12px; }
-    .section-title { text-align:center; font-family:var(--font-h); font-size:clamp(1.4rem,3vw,2rem); font-weight:800; margin-bottom:48px; letter-spacing:-0.5px; color:var(--navy); }
-    .section-title span { color: var(--green); }
-
-    .usp-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px; max-width:1000px; margin:0 auto; }
-    .usp-card {
-      background:#fff; border:1px solid var(--border); border-radius:16px;
-      padding:28px 24px; display:flex; align-items:flex-start; gap:16px;
-      transition:all 0.3s; position:relative; overflow:hidden;
-      box-shadow:0 2px 8px rgba(15,28,63,0.06);
+    .dest-cta {
+      display:block; text-align:center; margin-top:14px;
+      background:linear-gradient(135deg,var(--gold),#e8941a);
+      color:var(--navy); font-family:var(--fb); font-size:0.95rem; font-weight:700;
+      padding:11px; border-radius:10px; border:none; cursor:pointer; transition:all 0.2s;
     }
-    .usp-card::before { content:''; position:absolute; top:0;left:0; width:3px; height:100%; background:linear-gradient(180deg,var(--green),#15803d); border-radius:2px 0 0 2px; opacity:0; transition:opacity 0.3s; }
-    .usp-card:hover { border-color:rgba(22,163,74,0.35); transform:translateY(-3px); box-shadow:0 12px 32px rgba(15,28,63,0.1); }
-    .usp-card:hover::before { opacity:1; }
-    .usp-icon { width:48px; height:48px; min-width:48px; background:rgba(22,163,74,0.1); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:1.4rem; }
-    .usp-text h3 { font-family:var(--font-h); font-size:1rem; font-weight:700; margin-bottom:4px; color:var(--navy); }
-    .usp-text p { font-size:0.85rem; color:var(--muted); line-height:1.5; }
-    .usp-num { position:absolute; top:16px; right:16px; font-family:var(--font-h); font-size:2rem; font-weight:900; color:rgba(22,163,74,0.08); line-height:1; }
+    .dest-cta:hover { transform:translateY(-2px); }
 
-    /* FOMO */
-    .fomo { background:var(--navy); padding:80px 24px; text-align:center; position:relative; overflow:hidden; }
-    .fomo::before { content:''; position:absolute; top:50%;left:50%; transform:translate(-50%,-50%); width:600px; height:600px; border-radius:50%; background:radial-gradient(circle,rgba(22,163,74,0.1) 0%,transparent 65%); pointer-events:none; }
-    .fomo-box { max-width:700px; margin:0 auto; background:linear-gradient(135deg,rgba(22,163,74,0.12),rgba(22,163,74,0.04)); border:1px solid rgba(22,163,74,0.3); border-radius:20px; padding:48px 40px; position:relative; }
-    .fomo-icon { font-size:2.5rem; margin-bottom:16px; }
-    .fomo-box h2 { font-family:var(--font-h); font-size:clamp(1.2rem,2.5vw,1.7rem); font-weight:800; color:var(--green-light); margin-bottom:12px; letter-spacing:-0.3px; }
-    .fomo-box p { color:rgba(255,255,255,0.75); font-size:0.95rem; margin-bottom:28px; }
-    .fomo-cta { display:inline-block; background:linear-gradient(135deg,#16a34a,#15803d); color:#fff; font-family:var(--font-h); font-size:1rem; font-weight:800; padding:16px 40px; border-radius:10px; border:none; cursor:pointer; transition:all 0.25s; box-shadow:0 6px 28px rgba(22,163,74,0.45),0 0 0 0 rgba(22,163,74,0.3); animation:pulse-btn 2.5s 2s ease-in-out infinite; }
-    .fomo-cta:hover { transform:translateY(-2px); box-shadow:0 12px 40px rgba(22,163,74,0.55); }
+    /* ── SEGMENTS ── */
+    .segments { background: var(--white); padding: 80px 24px; }
+    .seg-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:16px; max-width:1000px; margin:0 auto; }
+    .seg-card {
+      border:1px solid var(--border); border-radius:16px; padding:28px 24px;
+      background:var(--off); transition:all 0.3s; position:relative; overflow:hidden;
+    }
+    .seg-card::before {
+      content:''; position:absolute; top:0; left:0; width:4px; height:100%;
+      background:linear-gradient(180deg,var(--gold),var(--sky));
+      border-radius:2px 0 0 2px; opacity:0; transition:opacity 0.3s;
+    }
+    .seg-card:hover { border-color:rgba(245,166,35,0.4); transform:translateY(-3px); box-shadow:0 12px 32px rgba(10,42,110,0.08); }
+    .seg-card:hover::before { opacity:1; }
+    .seg-icon { font-size:2rem; margin-bottom:12px; }
+    .seg-title { font-family:var(--fh); font-size:1.1rem; font-weight:700; color:var(--navy); margin-bottom:10px; }
+    .seg-hotels { font-size:0.82rem; color:var(--muted); line-height:1.7; }
+    .seg-hotels strong { color:var(--sky); font-weight:600; display:block; margin-bottom:4px; }
+
+    /* ── WHY ── */
+    .why { background:var(--navy); padding:80px 24px; position:relative; overflow:hidden; }
+    .why::before { content:''; position:absolute; top:-40%; right:-15%; width:600px; height:600px; border-radius:50%; background:radial-gradient(circle,rgba(26,127,196,0.12) 0%,transparent 65%); pointer-events:none; }
+    .why .sec-label { color:var(--goldl); }
+    .why .sec-title { color:var(--white); }
+    .why-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:14px; max-width:900px; margin:0 auto; }
+    .why-card { background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:14px; padding:24px 18px; text-align:center; transition:all 0.3s; }
+    .why-card:hover { background:rgba(255,255,255,0.1); transform:translateY(-3px); }
+    .why-icon { font-size:1.8rem; margin-bottom:10px; }
+    .why-title { font-family:var(--fh); font-size:0.95rem; font-weight:700; color:var(--white); margin-bottom:6px; }
+    .why-desc { font-size:0.8rem; color:rgba(255,255,255,0.5); line-height:1.5; }
+
+    /* ── FLIGHTS ── */
+    .flights { background:var(--off); padding:80px 24px; }
+    .flight-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:16px; max-width:900px; margin:0 auto; }
+    .flight-card { background:var(--white); border:1px solid var(--border); border-radius:16px; padding:24px; display:flex; gap:16px; align-items:flex-start; box-shadow:0 2px 8px rgba(10,42,110,0.05); transition:all 0.3s; }
+    .flight-card:hover { border-color:rgba(26,127,196,0.4); transform:translateY(-3px); }
+    .flight-icon { font-size:2rem; min-width:48px; }
+    .flight-dest { font-family:var(--fh); font-size:1rem; font-weight:700; color:var(--navy); margin-bottom:4px; }
+    .flight-info { font-size:0.82rem; color:var(--muted); line-height:1.6; }
+    .flight-airline { display:inline-flex; align-items:center; gap:4px; background:rgba(26,127,196,0.08); border:1px solid rgba(26,127,196,0.2); color:var(--ocean); font-size:0.72rem; font-weight:600; padding:2px 10px; border-radius:100px; margin-top:8px; }
+
+    /* ── CTA ── */
+    .cta-sec { background:var(--white); padding:80px 24px; text-align:center; }
+    .cta-box { max-width:580px; margin:0 auto; background:linear-gradient(135deg,rgba(10,42,110,0.04),rgba(26,127,196,0.06)); border:1px solid var(--border); border-radius:24px; padding:48px 40px; box-shadow:0 8px 48px rgba(10,42,110,0.06); }
+    .cta-box h2 { font-family:var(--fh); font-size:clamp(1.4rem,3vw,2rem); font-weight:700; color:var(--navy); margin-bottom:10px; letter-spacing:-0.5px; }
+    .cta-box p { color:var(--muted); font-size:0.9rem; margin-bottom:28px; line-height:1.6; }
+    .cta-gold { display:block; background:linear-gradient(135deg,var(--gold),#e8941a); color:var(--navy); font-family:var(--fb); font-size:1rem; font-weight:700; padding:16px; border-radius:10px; border:none; cursor:pointer; width:100%; box-shadow:0 4px 20px rgba(245,166,35,0.35); transition:all 0.2s; }
+    .cta-gold:hover { transform:translateY(-2px); box-shadow:0 8px 30px rgba(245,166,35,0.45); }
 
     /* ── FOOTER ── */
-    footer {
-      background: var(--navy);
-      padding: 40px 48px 0;
-    }
-    .footer-inner {
-      max-width: 1000px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-      flex-wrap: wrap;
-      padding-bottom: 32px;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-    .footer-brand { display: flex; align-items: center; gap: 14px; }
-    .footer-brand-text p { color: rgba(255,255,255,0.4); font-size: 0.78rem; margin-top: 2px; }
-    .footer-brand-name { font-family: var(--font-h); font-size: 1rem; font-weight: 800; color: #fff; }
+    footer { background:var(--navy); padding:40px 48px 0; }
+    .footer-inner { max-width:900px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:20px; padding-bottom:28px; border-bottom:1px solid rgba(255,255,255,0.08); }
+    .footer-brand { font-family:var(--fh); font-size:1.3rem; font-weight:700; color:var(--white); }
+    .footer-brand span { color:var(--gold); }
+    .footer-brand small { display:block; font-family:var(--fb); font-size:0.75rem; color:rgba(255,255,255,0.4); font-weight:400; margin-top:2px; }
+    .footer-right { text-align:right; }
+    .footer-phone { font-family:var(--fh); font-size:1.3rem; font-weight:700; color:var(--white); text-decoration:none; display:block; margin-bottom:12px; transition:color 0.2s; }
+    .footer-phone:hover { color:var(--goldl); }
+    .footer-socs { display:flex; gap:8px; justify-content:flex-end; }
+    .soc { width:38px; height:38px; border-radius:10px; display:flex; align-items:center; justify-content:center; text-decoration:none; transition:all 0.2s; }
+    .soc svg { width:18px; height:18px; fill:#fff; }
+    .soc.tg { background:rgba(34,158,217,0.2); } .soc.tg:hover { background:#229ED9; }
+    .soc.ig { background:rgba(225,48,108,0.2); } .soc.ig:hover { background:#e1306c; }
+    .soc.yt { background:rgba(255,0,0,0.15); }  .soc.yt:hover { background:#ff0000; }
+    .footer-bottom { max-width:900px; margin:0 auto; padding:18px 0; text-align:center; color:rgba(255,255,255,0.22); font-size:0.74rem; }
 
-    .footer-right { text-align: right; }
-    .footer-phone {
-      font-family: var(--font-h);
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: #fff;
-      text-decoration: none;
-      display: block;
-      margin-bottom: 14px;
-      letter-spacing: 0.5px;
-      transition: color 0.2s;
-    }
-    .footer-phone:hover { color: var(--green-light); }
-
-    .footer-socials {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      justify-content: flex-end;
-    }
-    .soc-link {
-      display: flex; align-items: center; justify-content: center;
-      width: 40px; height: 40px;
-      border-radius: 10px;
-      text-decoration: none;
-      transition: all 0.2s;
-      color: #fff;
-    }
-    .soc-link svg { width: 19px; height: 19px; fill: currentColor; }
-    .soc-link.tg  { background: rgba(34,158,217,0.2); }
-    .soc-link.ig  { background: rgba(225,48,108,0.2); }
-    .soc-link.yt  { background: rgba(255,0,0,0.18); }
-    .soc-link.tg:hover  { background: #229ED9; transform: translateY(-2px); }
-    .soc-link.ig:hover  { background: #e1306c; transform: translateY(-2px); }
-    .soc-link.yt:hover  { background: #ff0000; transform: translateY(-2px); }
-
-    .footer-bottom {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 18px 0;
-      text-align: center;
-      color: rgba(255,255,255,0.22);
-      font-size: 0.74rem;
-    }
-
-    /* MODAL */
-    .modal-overlay { position:fixed; inset:0; background:rgba(9,14,32,0.85); backdrop-filter:blur(6px); z-index:1000; display:flex; align-items:center; justify-content:center; padding:20px; opacity:0; pointer-events:none; transition:opacity 0.3s; }
+    /* ── MODAL ── */
+    .modal-overlay { position:fixed; inset:0; background:rgba(10,37,64,0.88); backdrop-filter:blur(6px); z-index:1000; display:flex; align-items:center; justify-content:center; padding:20px; opacity:0; pointer-events:none; transition:opacity 0.3s; }
     .modal-overlay.open { opacity:1; pointer-events:all; }
-    .modal { background:#fff; border:1px solid var(--border); border-radius:20px; padding:40px 36px; width:100%; max-width:480px; position:relative; transform:scale(0.92) translateY(20px); transition:transform 0.3s; max-height:92vh; overflow-y:auto; color:var(--text); box-shadow:0 24px 80px rgba(9,14,32,0.35); }
+    .modal { background:var(--white); border-radius:20px; padding:40px 36px; width:100%; max-width:460px; position:relative; transform:scale(0.92) translateY(20px); transition:transform 0.3s; max-height:92vh; overflow-y:auto; box-shadow:0 24px 80px rgba(10,37,64,0.35); }
     .modal-overlay.open .modal { transform:scale(1) translateY(0); }
-    .modal-close { position:absolute; top:16px; right:16px; background:var(--card-bg); border:1px solid var(--border); color:var(--muted); width:32px; height:32px; border-radius:50%; cursor:pointer; font-size:1rem; display:flex; align-items:center; justify-content:center; transition:all 0.2s; }
-    .modal-close:hover { background:#eee; color:var(--navy); }
+    .modal-close { position:absolute; top:16px; right:16px; background:var(--off); border:1px solid var(--border); color:var(--muted); width:32px; height:32px; border-radius:50%; cursor:pointer; font-size:1rem; display:flex; align-items:center; justify-content:center; transition:all 0.2s; }
+    .modal-close:hover { background:#e0edf8; }
+    .step { display:none; } .step.active { display:block; }
+    .sdots { display:flex; gap:6px; margin-bottom:24px; }
+    .sdot { height:4px; flex:1; border-radius:2px; background:var(--border); transition:background 0.3s; }
+    .sdot.done { background:var(--sky); }
+    .mtitle { font-family:var(--fh); font-size:1.2rem; font-weight:700; color:var(--navy); margin-bottom:8px; }
+    .msub { font-size:0.87rem; color:var(--muted); margin-bottom:22px; }
+    .cbtn { display:flex; align-items:center; gap:12px; width:100%; padding:13px 16px; border-radius:12px; border:1px solid var(--border); background:var(--off); color:var(--navy); font-family:var(--fb); font-size:0.88rem; font-weight:600; cursor:pointer; transition:all 0.2s; text-align:left; margin-bottom:9px; }
+    .cbtn:hover { border-color:var(--sky); background:#e8f4fd; }
+    .ci { font-size:1.2rem; min-width:28px; }
+    .fg { margin-bottom:14px; }
+    .fg label { display:block; font-size:0.72rem; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:0.8px; margin-bottom:7px; }
+    .fg input { width:100%; background:var(--off); border:1px solid var(--border); border-radius:10px; padding:12px 14px; color:var(--navy); font-family:var(--fb); font-size:0.93rem; outline:none; transition:border-color 0.2s,box-shadow 0.2s; }
+    .fg input::placeholder { color:#a0bcd4; }
+    .fg input:focus { border-color:var(--sky); box-shadow:0 0 0 3px rgba(26,127,196,0.1); }
+    .sbtn { width:100%; background:linear-gradient(135deg,var(--sky),var(--ocean)); color:#fff; font-family:var(--fb); font-size:0.97rem; font-weight:700; padding:14px; border-radius:10px; border:none; cursor:pointer; margin-top:6px; transition:all 0.2s; box-shadow:0 4px 20px rgba(14,83,152,0.3); }
+    .sbtn:hover { transform:translateY(-2px); box-shadow:0 8px 28px rgba(14,83,152,0.4); }
+    .scenter { text-align:center; padding:16px 0; }
+    .bemoji { font-size:3rem; margin-bottom:14px; }
+    .scenter h3 { font-family:var(--fh); font-size:1.25rem; font-weight:700; color:var(--navy); margin-bottom:10px; }
+    .scenter p { color:var(--muted); font-size:0.87rem; margin-bottom:22px; line-height:1.6; }
+    .tgbtn { display:inline-flex; align-items:center; gap:10px; background:#229ED9; color:#fff; font-family:var(--fb); font-size:0.93rem; font-weight:700; padding:13px 28px; border-radius:10px; text-decoration:none; transition:all 0.2s; box-shadow:0 4px 16px rgba(34,158,217,0.35); }
+    .tgbtn:hover { transform:translateY(-2px); }
+    .tgbtn svg { width:19px; height:19px; fill:#fff; }
 
-    .step { display:none; }
-    .step.active { display:block; }
-    .step-indicator { display:flex; gap:6px; margin-bottom:28px; }
-    .step-dot { height:4px; flex:1; border-radius:2px; background:var(--border); transition:background 0.3s; }
-    .step-dot.done { background:var(--green); }
-
-    /* ✅ Step 1 sarlavhalar katta (header formatida) */
-    .step-big-title {
-      font-family: var(--font-h);
-      font-size: 1.45rem;
-      font-weight: 900;
-      line-height: 1.25;
-      color: var(--navy);
-      margin-bottom: 10px;
-      letter-spacing: -0.4px;
-    }
-    .step-big-desc {
-      font-family: var(--font-h);
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--muted);
-      margin-bottom: 24px;
-      line-height: 1.4;
-    }
-    .modal h3 { font-family:var(--font-h); font-size:1.2rem; font-weight:800; margin-bottom:8px; color:var(--navy); letter-spacing:-0.3px; }
-    .modal-desc { font-size:0.88rem; color:var(--muted); margin-bottom:24px; }
-
-    .choice-btn { display:flex; align-items:center; gap:12px; width:100%; padding:16px 20px; border-radius:12px; border:1px solid var(--border); background:var(--card-bg); color:var(--navy); font-family:var(--font-h); font-size:0.95rem; font-weight:600; cursor:pointer; transition:all 0.2s; text-align:left; margin-bottom:12px; }
-    .choice-btn.yes:hover { border-color:var(--green); background:rgba(22,163,74,0.06); color:var(--green); }
-    .choice-btn.no:hover { border-color:#ef4444; background:rgba(239,68,68,0.05); color:#dc2626; }
-    .choice-btn.yes .cb-icon { background:rgba(22,163,74,0.12); color:var(--green); }
-    .choice-btn.no .cb-icon { background:rgba(239,68,68,0.1); color:#ef4444; }
-    .cb-icon { width:36px; height:36px; min-width:36px; border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:1.1rem; }
-
-    .form-group { margin-bottom:16px; }
-    .form-group label { display:block; font-family:var(--font-h); font-size:0.75rem; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:0.8px; margin-bottom:8px; }
-    .form-group input, .form-group select { width:100%; background:var(--card-bg); border:1px solid var(--border); border-radius:10px; padding:13px 16px; color:var(--navy); font-family:var(--font-b); font-size:0.95rem; outline:none; transition:border-color 0.2s,box-shadow 0.2s; }
-    .form-group input::placeholder { color:#b0bcd8; }
-    .form-group input:focus, .form-group select:focus { border-color:var(--green); box-shadow:0 0 0 3px rgba(22,163,74,0.1); }
-    .form-group select { appearance:none; cursor:pointer; }
-
-    .submit-btn { width:100%; background:linear-gradient(135deg,#16a34a,#15803d); color:#fff; font-family:var(--font-h); font-size:1rem; font-weight:800; padding:15px; border-radius:10px; border:none; cursor:pointer; margin-top:8px; transition:all 0.2s; box-shadow:0 4px 20px rgba(22,163,74,0.35); }
-    .submit-btn:hover { transform:translateY(-2px); box-shadow:0 8px 30px rgba(22,163,74,0.45); }
-
-    .screen-center { text-align:center; padding:16px 0; }
-    .big-emoji { font-size:3rem; margin-bottom:16px; }
-    .screen-center h3 { font-family:var(--font-h); font-size:1.3rem; font-weight:800; margin-bottom:10px; color:var(--navy); }
-    .screen-center p { color:var(--muted); font-size:0.9rem; margin-bottom:24px; line-height:1.6; }
-
-    .tg-btn { display:inline-flex; align-items:center; gap:10px; background:#229ED9; color:#fff; font-family:var(--font-h); font-size:0.95rem; font-weight:700; padding:14px 32px; border-radius:10px; text-decoration:none; transition:all 0.2s; box-shadow:0 4px 16px rgba(34,158,217,0.35); }
-    .tg-btn:hover { transform:translateY(-2px); box-shadow:0 8px 28px rgba(34,158,217,0.45); }
-    .tg-btn svg { width:20px; height:20px; fill:#fff; }
-
-    .reveal { opacity:0; transform:translateY(28px); transition:opacity 0.6s ease,transform 0.6s ease; }
+    .reveal { opacity:0; transform:translateY(28px); transition:opacity 0.6s,transform 0.6s; }
     .reveal.visible { opacity:1; transform:translateY(0); }
 
-    /* ── MOBILE ── */
-    @media(max-width:768px){
-      .hero { padding: 48px 20px 60px; }
-      .headline { font-size: clamp(1.6rem, 8vw, 2.4rem); letter-spacing: -0.5px; }
-      .guarantee { padding: 14px 18px; font-size: 0.88rem; }
-      .cta-btn { padding: 16px 32px; font-size: 0.95rem; }
-
-      .stats { padding: 40px 20px; }
-      .stats-grid { gap: 8px; }
-      .stat-num { font-size: 1.7rem; }
-      .stat-label { font-size: 0.75rem; }
-
-      .usps { padding: 56px 16px; }
-      .usp-grid { grid-template-columns: 1fr; }
-
-      .fomo { padding: 56px 16px; }
-      .fomo-box { padding: 32px 20px; }
-      .fomo-box h2 { font-size: 1.15rem; }
-
-      footer { padding: 32px 20px 0; }
-      .footer-inner { flex-direction: column; align-items: flex-start; gap: 28px; padding-bottom: 28px; }
-      .footer-right { text-align: left; width: 100%; }
-      .footer-phone { font-size: 1.25rem; }
-      .footer-socials { justify-content: flex-start; }
-
-      .modal { padding: 28px 18px; margin: 12px; border-radius: 16px; }
-      .step-big-title { font-size: 1.2rem; }
-      .step-big-desc { font-size: 0.9rem; }
+    @media(max-width:600px) {
+      .hero h1 { font-size:2rem; }
+      .stats-inner { grid-template-columns:repeat(2,1fr); }
+      .cta-box { padding:28px 18px; }
+      .modal { padding:28px 16px; }
+      footer { padding:28px 20px 0; }
+      .footer-inner { flex-direction:column; align-items:flex-start; }
+      .footer-right { text-align:left; }
+      .footer-socs { justify-content:flex-start; }
     }
   </style>
 </head>
@@ -338,171 +269,247 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="dots-bg"></div>
-<div class="pre-headline">
-    Samarqandlik Germaniyaga ishga ketmoqchi bo'lganlar diqqatiga!
+  <div class="hero-badge" style="background:rgba(245,166,35,0.25);border:1px solid rgba(245,166,35,0.6);font-size:0.85rem;padding:8px 22px;letter-spacing:0.5px;">📍 TOSHKENT SHAHAR</div>
+  <h1>Antaliyadan zerikganlar uchun<br><em>premium tur paket</em></h1>
+  <p class="hero-sub">Misr yoki Turkiya — tajribali sayohatchilar uchun eng yaxshi otellar va tur paketlar.</p>
+  <div class="hero-tags">
+    <span class="hero-tag">🏖️ 5 yulduzli otellar</span>
+    <span class="hero-tag">✅ Vizasiz sayohat</span>
+    <span class="hero-tag">✈️ To'g'ridan to'g'ri reyslar</span>
+    <span class="hero-tag">👨‍👩‍👧 Oilaviy dam olish</span>
   </div>
-  <h1 class="headline">
-    Noldan <span class="hl">4 oyda</span> Nemis tilidan<br>
-    A2 sertifikat olishingizga <span class="hl">kafolat beramiz</span>
-  </h1>
-  <div class="guarantee">
-    <strong>🛡️ 100% Kafolat:</strong> Agar ololmasangiz — kurs uchun to'lovingiz
-    <strong>100% qaytarib beriladi</strong> yoki A2 sertifikat olguningizgacha
-    <strong>BEPUL o'qitamiz</strong>
-  </div>
-  <button class="cta-btn" onclick="openModal()">🚀 Ro'yhatdan o'tish</button>
-  <!-- ✅ Majburiyatsiz • Faqat 2 daqiqa olib tashlandi -->
-  <div class="cta-sub-wrap">
-    <span class="cta-free">🎁 Birinchi BEPUL sinov darsi</span>
-  </div>
+  <button class="hero-btn" onclick="openModal()">🌴 Bron qiling →</button>
 </section>
 
 <!-- STATS -->
-<div class="stats reveal">
-  <div class="stats-grid">
-    <div><div class="stat-num">800+</div><div class="stat-label">O'quvchi ta'lim olgan</div></div>
-    <div><div class="stat-num">4 oy</div><div class="stat-label">A2 sertifikatgacha</div></div>
-    <div><div class="stat-num">C1</div><div class="stat-label">Darajali ustozlar</div></div>
+<div class="stats">
+  <div class="stats-inner">
+    <div><div class="stat-num">2</div><div class="stat-lbl">Premium yo'nalish</div></div>
+    <div><div class="stat-num">5★</div><div class="stat-lbl">Faqat 5 yulduzli otellar</div></div>
+    <div><div class="stat-num">7-10</div><div class="stat-lbl">Kun — optimal muddat</div></div>
+    <div><div class="stat-num">✓</div><div class="stat-lbl">Vizasiz sayohat</div></div>
   </div>
 </div>
 
-<!-- KURS HAQIDA -->
-<section class="usps">
-  <div class="section-label">Kurs haqida</div>
-  <h2 class="section-title">Kurs <span>tafsilotlari</span></h2>
-  <div class="usp-grid">
+<!-- DESTINATIONS -->
+<section class="destinations">
+  <div class="sec-label">Yo'nalishlar</div>
+  <h2 class="sec-title">Qayerga <span>bormoqchisiz?</span></h2>
+  <div class="dest-grid">
 
-    <div class="usp-card reveal">
-      <div class="usp-icon">👨‍🎓</div>
-      <!-- ✅ "yuzlab" → "ko'plab" -->
-      <div class="usp-text"><h3>800+ Bitiruvchi</h3><p>Ko'plab o'quvchilarimiz allaqachon Germaniyada muvaffaqiyatli ishlashmoqda</p></div>
-      <div class="usp-num">01</div>
-    </div>
-
-    <div class="usp-card reveal" style="transition-delay:0.08s">
-      <div class="usp-icon">🏆</div>
-      <div class="usp-text"><h3>C1 Darajali Ustozlar</h3><p>4 yildan ortiq tajribaga ega, sertifikatli ustozlar dars o'tadi</p></div>
-      <div class="usp-num">02</div>
-    </div>
-
-    <div class="usp-card reveal" style="transition-delay:0.12s">
-      <div class="usp-icon">👥</div>
-      <div class="usp-text"><h3>2 Ta Ustoz</h3><p>Har bir guruhda 2 nafar ustoz — asosiy va yordamchi ustoz dars o'tadi</p></div>
-      <div class="usp-num">03</div>
-    </div>
-
-    <div class="usp-card reveal" style="transition-delay:0.16s">
-      <div class="usp-icon">⚡</div>
-      <div class="usp-text"><h3>Tez Natija</h3><p>3 kun asosiy + 3 kun qo'shimcha darslar orqali maksimal tezlikda natija</p></div>
-      <div class="usp-num">04</div>
-    </div>
-
-    <div class="usp-card reveal" style="transition-delay:0.2s">
-      <div class="usp-icon">📚</div>
-      <div class="usp-text"><h3>Bepul Kitoblar</h3><p>Barcha o'quv materiallar va kitoblar to'liq bepul taqdim etiladi</p></div>
-      <div class="usp-num">05</div>
-    </div>
-
-    <div class="usp-card reveal" style="transition-delay:0.24s">
-      <div class="usp-icon">✈️</div>
-      <div class="usp-text"><h3>Germaniyaga Yo'l</h3><p>A2 sertifikat olganingizdan keyin Germaniyaga ketishingizda amaliy yordam</p></div>
-      <div class="usp-num">06</div>
-    </div>
-
-  </div>
-</section>
-
-<!-- FOMO -->
-<section class="fomo">
-  <div class="fomo-box reveal">
-    <div class="fomo-icon">🎯</div>
-    <h2>Hoziroq ro'yhatdan o'tsangiz — Germaniyaga ketishingizda amaliy yordam beramiz!</h2>
-    <p>Joylar soni cheklangan. Quyidagi tugmani bosib hoziroq ro'yhatdan o'ting!</p>
-    <button class="fomo-cta" onclick="openModal()">✅ Hoziroq Ro'yhatdan O'tish →</button>
-  </div>
-</section>
-
-<footer>
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <div class="footer-brand-text">
-        <div class="footer-brand-name">Qadriyat Education School</div>
-        <p>Samarqand • Nemis tili kurslari</p>
+    <!-- MISR -->
+    <div class="dest-card reveal" onclick="openModal('Misr — Sharm el-Sheikh')">
+      <img src="M.jpg" alt="Misr Sharm el-Sheikh"/>
+      <div class="dest-overlay">
+        <div class="dest-flag">🇪🇬</div>
+        <div class="dest-name">Misr — Sharm el-Sheikh</div>
+        <ul class="dest-list">
+          <li>All inclusive konsepsiya</li>
+          <li>Qizil dengiz — suv osti dunyosi</li>
+          <li>Bolalar uchun akvapark va animatsiya</li>
+          <li>Vizasiz sayohat (14 kungacha)</li>
+          <li>Musulmon davlat — qulay muhit</li>
+        </ul>
+        <div class="dest-tags">
+          <span class="dest-tag">All Inclusive</span>
+          <span class="dest-tag">Oilaviy</span>
+          <span class="dest-tag">6.5 soat reys</span>
+        </div>
+        <button class="dest-cta">Bron qiling →</button>
       </div>
     </div>
+
+    <!-- TURKIYA -->
+    <div class="dest-card reveal" style="transition-delay:0.1s" onclick="openModal('Turkiya — Egey sohillari')">
+      <img src="T.jpg" alt="Turkiya Egey sohillari"/>
+      <div class="dest-overlay">
+        <div class="dest-flag">🇹🇷</div>
+        <div class="dest-name">Turkiya — Egey sohillari</div>
+        <ul class="dest-list">
+          <li>Antaliyadan boshqacha — yangi taassurot</li>
+          <li>Yevropacha muhit va chiroyli manzaralar</li>
+          <li>Premium otellar, sifatli dam olish</li>
+        </ul>
+        <div class="dest-tags">
+          <span class="dest-tag">Premium</span>
+          <span class="dest-tag">Yevropacha</span>
+          <span class="dest-tag">Yangi tajriba</span>
+        </div>
+        <button class="dest-cta">Bron qiling →</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SEGMENTS -->
+<section class="segments">
+  <div class="sec-label">Otel tanlash</div>
+  <h2 class="sec-title">Kimlar <span>uchun?</span></h2>
+  <div class="seg-grid">
+
+    <div class="seg-card reveal">
+      <div class="seg-icon">👨‍👩‍👧</div>
+      <div class="seg-title">Oilaviy dam olish (Misr)</div>
+      <div class="seg-hotels">
+        <strong>Tavsiya etiladigan otellar:</strong>
+        Sunrise Montemare · Rixos Radamis · Rixos Seagate · Swissotel · Jaz Mirabel · Albatros Palace · Royal Moderna
+        <br><br>Katta hudud, akvapark, bolalar uchun sharoit va oilaviy konsepsiya.
+      </div>
+    </div>
+
+    <div class="seg-card reveal" style="transition-delay:0.08s">
+      <div class="seg-icon">💑</div>
+      <div class="seg-title">Yoshlar va juftliklar (Misr)</div>
+      <div class="seg-hotels">
+        <strong>Tavsiya etiladigan otellar:</strong>
+        Rixos · Rixos Adults (18+) · Albatros Royal Grand · Baron Palms
+        <br><br>Faol muhit, kechki dasturlar, klub va animatsiya.
+      </div>
+    </div>
+
+    <div class="seg-card reveal" style="transition-delay:0.12s">
+      <div class="seg-icon">🌊</div>
+      <div class="seg-title">Egey sohillari — Oila va Juftlik</div>
+      <div class="seg-hotels">
+        <strong>Hududlar:</strong>
+        Kuşadası · Bodrum · Marmaris · Fethiye · Dalaman
+        <br><br>Antaliyadan charchagan, premium dam olish xohlovchilar uchun. Yevropacha muhit.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="why">
+  <div class="sec-label">Nima uchun biz?</div>
+  <h2 class="sec-title" style="color:var(--white)">Bizning <span>afzalliklarimiz</span></h2>
+  <div class="why-grid">
+    <div class="why-card reveal">
+      <div class="why-icon">⭐</div>
+      <div class="why-title">7 yillik tajriba</div>
+      <div class="why-desc">Sayohat yo'nalishida 7 yildan ortiq tajribaga egamiz</div>
+    </div>
+    <div class="why-card reveal" style="transition-delay:0.08s">
+      <div class="why-icon">🏅</div>
+      <div class="why-title">5000+ mamnun sayohatchi</div>
+      <div class="why-desc">5000 dan ortiq sayohatchi ishonchi — bizning eng katta yutug'imiz</div>
+    </div>
+    <div class="why-card reveal" style="transition-delay:0.12s">
+      <div class="why-icon">🕌</div>
+      <div class="why-title">Qulay muhit</div>
+      <div class="why-desc">Misr — musulmon davlat. Egey — o'zbeklar kamroq, premium atmosfera</div>
+    </div>
+    <div class="why-card reveal" style="transition-delay:0.16s">
+      <div class="why-icon">💬</div>
+      <div class="why-title">Individual yondashuv</div>
+      <div class="why-desc">Har bir mijoz uchun alohida tur paketi — sizning xohishingizga qarab</div>
+    </div>
+  </div>
+</section>
+
+<!-- OTZIVLAR -->
+<section class="flights">
+  <div class="sec-label">Mijozlarimiz fikri</div>
+  <h2 class="sec-title">Ular <span>nima deydi?</span></h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;max-width:1100px;margin:0 auto;">
+    <div class="reveal" style="border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(10,42,110,0.1);"><img src="2.jpg" alt="Otziv 1" style="width:100%;height:100%;object-fit:cover;display:block;"/></div>
+    <div class="reveal" style="border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(10,42,110,0.1);transition-delay:0.05s"><img src="3.jpg" alt="Otziv 2" style="width:100%;height:100%;object-fit:cover;display:block;"/></div>
+    <div class="reveal" style="border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(10,42,110,0.1);transition-delay:0.08s"><img src="4.jpg" alt="Otziv 3" style="width:100%;height:100%;object-fit:cover;display:block;"/></div>
+    <div class="reveal" style="border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(10,42,110,0.1);transition-delay:0.11s"><img src="5.jpg" alt="Otziv 4" style="width:100%;height:100%;object-fit:cover;display:block;"/></div>
+    <div class="reveal" style="border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(10,42,110,0.1);transition-delay:0.14s"><img src="6.jpg" alt="Otziv 5" style="width:100%;height:100%;object-fit:cover;display:block;"/></div>
+    <div class="reveal" style="border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(10,42,110,0.1);transition-delay:0.17s"><img src="7.jpg" alt="Otziv 6" style="width:100%;height:100%;object-fit:cover;display:block;"/></div>
+    <div class="reveal" style="border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(10,42,110,0.1);transition-delay:0.2s"><img src="8.jpg" alt="Otziv 7" style="width:100%;height:100%;object-fit:cover;display:block;"/></div>
+    <div class="reveal" style="border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(10,42,110,0.1);transition-delay:0.23s"><img src="9.jpg" alt="Otziv 8" style="width:100%;height:100%;object-fit:cover;display:block;"/></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-sec">
+  <div class="cta-box reveal">
+    <h2>Tur paketni hozir bron qiling</h2>
+    <p>Misr yoki Turkiya — qulay sanani tanlang va tur paketingizni bron qiling. Biz eng yaxshi variantni taklif qilamiz.</p>
+    <button class="cta-gold" onclick="openModal()">🌴 Bron qiling →</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Pay<span>Fly</span><small>Misr va Turkiya premium turlari</small></div>
+    </div>
     <div class="footer-right">
-      <a class="footer-phone" href="tel:+998883900330">88 390 03 30</a>
-      <div class="footer-socials">
-        <a class="soc-link tg" href="https://t.me/qadriyat_nemistili" target="_blank" title="Telegram">
+      <a class="footer-phone" href="tel:+998883050033">88 305 00 33</a>
+      <div class="footer-socs">
+        <a class="soc tg" href="https://t.me/payfly_uzb" target="_blank">
           <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248l-2.02 9.52c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.04 14.6l-2.95-.924c-.641-.204-.654-.641.136-.953l11.527-4.445c.535-.194 1.003.131.81.97z"/></svg>
         </a>
-        <a class="soc-link ig" href="https://www.instagram.com/qadriyat_school/" target="_blank" title="Instagram">
+        <a class="soc ig" href="https://www.instagram.com/payfly_uz/" target="_blank">
           <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
         </a>
-        <a class="soc-link yt" href="https://www.youtube.com/@Qadriyatschool" target="_blank" title="YouTube">
+        <a class="soc yt" href="https://www.youtube.com/@payfly_uz" target="_blank">
           <svg viewBox="0 0 24 24"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
         </a>
       </div>
     </div>
   </div>
-  <div class="footer-bottom">© 2024 Qadriyat Education School — Samarqand</div>
+  <div class="footer-bottom">© 2026 PayFly — Barcha huquqlar himoyalangan</div>
 </footer>
 
-<!-- ══ MODAL ══ -->
-<div class="modal-overlay" id="modalOverlay" onclick="handleOverlayClick(event)">
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="handleOv(event)">
   <div class="modal">
     <button class="modal-close" onclick="closeModal()">✕</button>
-    <div class="step-indicator" id="stepDots">
-      <div class="step-dot" id="dot1"></div>
-      <div class="step-dot" id="dot2"></div>
-      <div class="step-dot" id="dot3"></div>
-      <div class="step-dot" id="dot4"></div>
-      <div class="step-dot" id="dot5"></div>
+    <div class="sdots" id="sdots">
+      <div class="sdot" id="sd1"></div>
+      <div class="sdot" id="sd2"></div>
+      <div class="sdot" id="sd3"></div>
+      <div class="sdot" id="sd4"></div>
+      <div class="sdot" id="sd5"></div>
+      
     </div>
 
-    <!-- ✅ STEP 1 — katta header matnlar -->
+    <!-- STEP 1: Yo'nalish -->
     <div class="step active" id="step1">
-      <div class="step-big-title">📍 Sizga qatnab o'qish qulaymi?</div>
-      <div class="step-big-desc">O'quv markaz Samarqand shahrida joylashgan, darslar offline bo'ladi.</div>
-      <!-- ✅ "— davom etish" olib tashlandi -->
-      <button class="choice-btn yes" onclick="goStep(2)">
-        <div class="cb-icon">✅</div>Ha, qulay
-      </button>
-      <button class="choice-btn no" onclick="goStep('no')">
-        <div class="cb-icon">❌</div>Yo'q, noqulay
-      </button>
+      <div class="mtitle">✈️ Qayerga bormoqchisiz?</div>
+      <div class="msub">Yo'nalishni tanlang — joyingizni bron qilamiz.</div>
+      <button class="cbtn" onclick="setD('Misr — Sharm el-Sheikh');gs(2)"><span class="ci">🇪🇬</span>Misr — Sharm el-Sheikh</button>
+      <button class="cbtn" onclick="setD('Turkiya — Egey sohillari');gs(2)"><span class="ci">🇹🇷</span>Turkiya — Egey sohillari</button>
     </div>
 
-    <!-- STEP 2: Ism -->
+    <!-- STEP 2: Yashash joyi -->
     <div class="step" id="step2">
-      <h3>👤 Ismingizni yozing</h3>
-      <p class="modal-desc">Siz bilan muloqot qilishimiz uchun kerak.</p>
-      <div class="form-group">
-        <label>Ism va Familiya</label>
-        <input type="text" id="inp-name" placeholder="Masalan: Dilnoza Yusupova" />
-      </div>
-      <button class="submit-btn" onclick="nextFromStep(2)">Keyingisi →</button>
+      <div class="mtitle">📍 Qayerda yashaysiz?</div>
+      <div class="msub">Xizmat hududimizni aniqlaymiz.</div>
+      <button class="cbtn" onclick="setCity('Toshkent shahar');gs(3)"><span class="ci">🏙️</span>Toshkent shahar</button>
+      <button class="cbtn" onclick="gs('noCity')"><span class="ci">🗺️</span>Viloyat</button>
     </div>
 
-    <!-- STEP 3: Telefon -->
+    <!-- STEP 3: Ism -->
     <div class="step" id="step3">
-      <h3>📱 Telefon raqamingiz</h3>
-      <p class="modal-desc">Siz bilan bog'lanish uchun asosiy raqamingizni kiriting.</p>
-      <div class="form-group">
-        <label>Telefon raqam</label>
-        <input type="tel" id="inp-phone" placeholder="+998 90 123 45 67" />
-      </div>
-      <button class="submit-btn" onclick="nextFromStep(3)">Keyingisi →</button>
+      <div class="mtitle">👤 Ismingizni yozing</div>
+      <div class="msub">Siz bilan muloqot qilishimiz uchun kerak.</div>
+      <div class="fg"><label>Ism</label><input type="text" id="inp-name" placeholder="Masalan: Dilnoza"/></div>
+      <button class="sbtn" onclick="nx(3)">Keyingisi →</button>
     </div>
 
-    <!-- ✅ STEP 4: Vaqt — 09:00-18:00 oraliqda -->
+    <!-- STEP 5: Telefon -->
     <div class="step" id="step4">
-      <h3>🕐 Qaysi vaqtda qo'ng'iroq qilsak qulay?</h3>
-      <p class="modal-desc">Qulay vaqtni tanlang — o'sha paytda siz bilan bog'lanamiz.</p>
-      <div class="form-group">
-        <label>Qo'ng'iroq vaqti</label>
-        <select id="inp-time">
+      <div class="mtitle">📱 Telefon raqamingiz</div>
+      <div class="msub">Mutaxassislarimiz sizga qo'ng'iroq qilishadi.</div>
+      <div class="fg"><label>Telefon raqam</label><input type="tel" id="inp-phone" placeholder="+998 90 123 45 67"/></div>
+      <button class="sbtn" onclick="nx(4)">Keyingisi →</button>
+    </div>
+
+    <!-- STEP 6: Qo'ng'iroq vaqti -->
+    <div class="step" id="step5">
+      <div class="mtitle">🕐 Qachon qo'ng'iroq qilsak qulay?</div>
+      <div class="msub">Ish vaqtimiz: 09:00 – 18:00.</div>
+      <div class="fg">
+        <label>Qulay vaqt</label>
+        <select id="inp-time" style="width:100%;background:var(--off);border:1px solid var(--border);border-radius:10px;padding:12px 14px;color:var(--navy);font-family:var(--fb);font-size:0.93rem;outline:none;appearance:none;cursor:pointer;">
           <option value="">— Tanlang —</option>
           <option>09:00 – 10:00</option>
           <option>10:00 – 11:00</option>
@@ -515,42 +522,30 @@
           <option>17:00 – 18:00</option>
         </select>
       </div>
-      <button class="submit-btn" onclick="nextFromStep(4)">Keyingisi →</button>
+      <button class="sbtn" onclick="submit()">✅ Bron qiling</button>
     </div>
 
-    <!-- ✅ STEP 5: Qo'shimcha raqam — "ixtiyoriy" olib tashlandi -->
-    <div class="step" id="step5">
-      <h3>📞 Qo'shimcha telefon raqam</h3>
-      <p class="modal-desc">Agar asosiy raqamga bog'lana olmasak murojaat qilamiz.</p>
-      <div class="form-group">
-        <label>Qo'shimcha raqam</label>
-        <input type="tel" id="inp-phone2" placeholder="+998 91 123 45 67" />
-      </div>
-      <button class="submit-btn" onclick="submitLead()">✅ Ro'yhatdan O'tish</button>
-    </div>
 
     <!-- SUCCESS -->
-    <div class="step" id="stepSuccess">
-      <div class="screen-center">
-        <div class="big-emoji">🎉</div>
+    <div class="step" id="stepOk">
+      <div class="scenter">
+        <div class="bemoji">🎉</div>
         <h3>Ma'lumotlaringiz qabul qilindi!</h3>
-        <!-- ✅ yangi matn -->
-        <p>Tez fursatda siz bilan aloqaga chiqamiz.<br>Savollaringiz bo'lsa, pastdagi knopkani bosib Telegramdan yozing 👇</p>
-        <a href="https://t.me/qadriyat_nemistili" target="_blank" class="tg-btn">
+        <p>Sizga tez fursatda aloqaga chiqamiz.<br>Savollaringiz bo'lsa, quyidagi tugmani bosib Telegramdan yozing 👇</p>
+        <a href="https://t.me/payfly_uzb" target="_blank" class="tgbtn">
           <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248l-2.02 9.52c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.04 14.6l-2.95-.924c-.641-.204-.654-.641.136-.953l11.527-4.445c.535-.194 1.003.131.81.97z"/></svg>
           Telegramdan yozish
         </a>
       </div>
     </div>
 
-    <!-- NO screen -->
-    <div class="step" id="stepNo">
-      <div class="screen-center">
-        <div class="big-emoji">🙏</div>
+    <!-- VILOYAT -->
+    <div class="step" id="noCity">
+      <div class="scenter">
+        <div class="bemoji">🙏</div>
         <h3>Qiziqishingiz uchun rahmat!</h3>
-        <!-- ✅ yangi matn -->
-        <p>Afsuski, hozircha onlayn darslar mavjud emas.<br>Savollaringiz bo'lsa, pastdagi knopkani bosib Telegramdan yozing 👇</p>
-        <a href="https://t.me/qadriyat_nemistili" target="_blank" class="tg-btn">
+        <p>Afsuski, hozircha faqat Toshkent shahrida xizmat ko'rsatamiz.<br>Savollaringiz bo'lsa, quyidagi tugmani bosib Telegramdan yozing 👇</p>
+        <a href="https://t.me/payfly_uzb" target="_blank" class="tgbtn">
           <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248l-2.02 9.52c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.04 14.6l-2.95-.924c-.641-.204-.654-.641.136-.953l11.527-4.445c.535-.194 1.003.131.81.97z"/></svg>
           Telegramdan yozish
         </a>
@@ -561,81 +556,67 @@
 </div>
 
 <script>
-  function openModal() {
+  let fd = { dest:'', city:'', group:'', name:'', phone:'', time:'' };
+
+  function openModal(dest) {
     document.getElementById('modalOverlay').classList.add('open');
     document.body.style.overflow = 'hidden';
-    showStep(1); updateDots(0);
+    if (dest) { fd.dest = dest; showStep(2); updateDots(1); }
+    else { showStep(1); updateDots(0); }
   }
   function closeModal() {
     document.getElementById('modalOverlay').classList.remove('open');
     document.body.style.overflow = '';
   }
-  function handleOverlayClick(e) {
-    if (e.target === document.getElementById('modalOverlay')) closeModal();
-  }
+  function handleOv(e) { if (e.target === document.getElementById('modalOverlay')) closeModal(); }
   function showStep(id) {
     document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
-    document.getElementById(typeof id === 'number' ? 'step'+id : id).classList.add('active');
+    document.getElementById(typeof id==='number'?'step'+id:id).classList.add('active');
   }
-  function updateDots(active) {
-    const wrap = document.getElementById('stepDots');
-    if (typeof active !== 'number') { wrap.style.display='none'; return; }
-    wrap.style.display = 'flex';
-    for (let i=1;i<=5;i++) document.getElementById('dot'+i)?.classList.toggle('done', i<=active);
+  function updateDots(n) {
+    const w = document.getElementById('sdots');
+    if (typeof n!=='number'){w.style.display='none';return;}
+    w.style.display='flex';
+    for(let i=1;i<=7;i++) document.getElementById('sd'+i)?.classList.toggle('done',i<=n);
   }
-  function goStep(t) {
-    if (t==='no') { showStep('stepNo'); updateDots('no'); return; }
-    showStep(t); updateDots(t-1);
+  function gs(n) {
+    if (n === 'noCity') { showStep('noCity'); updateDots('no'); return; }
+    showStep(n); updateDots(n-1);
   }
-  function nextFromStep(s) {
-    const v = {
-      2:{id:'inp-name',  msg:'Iltimos, ismingizni kiriting.'},
-      3:{id:'inp-phone', msg:'Iltimos, telefon raqamingizni kiriting.'},
-      4:{id:'inp-time',  msg:'Iltimos, qulay vaqtni tanlang.'}
-    }[s];
-    if (v && !document.getElementById(v.id).value.trim()) { alert(v.msg); return; }
-    goStep(s+1);
-  }
+  function setD(v) { fd.dest = v; }
+  function setCity(v) { fd.city = v; }
+  function setG(v) { fd.group = v; }
 
-  async function submitLead() {
-    const name   = document.getElementById('inp-name').value.trim();
-    const phone  = document.getElementById('inp-phone').value.trim();
-    const time   = document.getElementById('inp-time').value;
-    const phone2 = document.getElementById('inp-phone2').value.trim();
-
-    // Ekranni ko'rsat
-    showStep('stepSuccess');
-    updateDots('done');
-
-    // 1. Meta Pixel — brauzerdan
-    const eventId = 'lead_' + Date.now() + '_' + Math.random().toString(36).slice(2);
-    if (typeof fbq !== 'undefined') {
-      fbq('track', 'Lead', {
-        content_name: "QES Ro'yhatdan o'tish",
-        content_category: 'Education — Nemis tili',
-        value: 0,
-        currency: 'UZS'
-      }, { eventID: eventId });
+  function nx(s) {
+    if (s===3) {
+      const v=document.getElementById('inp-name').value.trim();
+      if(!v){alert('Iltimos, ismingizni kiriting.');return;}
+      fd.name=v;
     }
+    if (s===4) {
+      const v=document.getElementById('inp-phone').value.trim();
+      if(!v){alert('Iltimos, telefon raqamingizni kiriting.');return;}
+      fd.phone=v;
+    }
+    gs(s+1);
+  }
 
-    // 2. Meta CAPI — serverdan (iOS va AdBlocker uchun)
+  async function submit() {
+    showStep('stepOk'); updateDots('done');
+
+    const eid = 'lead_'+Date.now()+'_'+Math.random().toString(36).slice(2);
+    if(typeof fbq!=='undefined'){
+      fbq('track','Lead',{content_name:'PayFly bron',content_category:fd.dest,value:0,currency:'UZS'},{eventID:eid});
+    }
     try {
-      await fetch('/api/lead', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, phone, time, phone2, eventId, userAgent: navigator.userAgent, sourceUrl: window.location.href })
-      });
-      console.log('CAPI yuborildi');
-    } catch(e) {
-      console.warn('CAPI xato:', e);
-    }
+      await fetch('/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({...fd,eventId:eid,userAgent:navigator.userAgent,sourceUrl:window.location.href})});
+    } catch(e){console.warn('CAPI:',e);}
+    console.log('Lead:',fd);
   }
 
-  // Scroll reveal
   document.querySelectorAll('.reveal').forEach(el =>
-    new IntersectionObserver((en,ob)=>{
-      en.forEach(e=>{ if(e.isIntersecting){e.target.classList.add('visible');ob.unobserve(e.target);} });
-    },{threshold:0.1}).observe(el)
+    new IntersectionObserver((en,ob)=>{en.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');ob.unobserve(e.target);}});},{threshold:0.1}).observe(el)
   );
 </script>
 </body>
